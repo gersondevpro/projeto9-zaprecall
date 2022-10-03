@@ -8,6 +8,7 @@ export default function Flashcards({ item, questionario, setQuestionario, conclu
 
     const [status, setStatus] = useState(0)
     const [avalia, setAvalia] = useState("")
+    const [resolucao, setResolucao] = useState("")
 
     function exibirPergunta(pergunta) {
         const novoValor = 1
@@ -26,6 +27,9 @@ export default function Flashcards({ item, questionario, setQuestionario, conclu
         console.log(concluida)
         const resultado = concluida + 1
         setConcluida(resultado)
+
+        const nl = "(Não lembrei)"
+        setResolucao(nl)
     }
 
     function quaseNaoLembrei(dado02) {
@@ -35,6 +39,9 @@ export default function Flashcards({ item, questionario, setQuestionario, conclu
         console.log(concluida)
         const resultado = concluida + 1
         setConcluida(resultado)
+
+        const qnl = "(Quase não lembrei)"
+        setResolucao(qnl)
     }
 
     function zap(dado03) {
@@ -44,6 +51,9 @@ export default function Flashcards({ item, questionario, setQuestionario, conclu
         console.log(concluida)
         const resultado = concluida + 1
         setConcluida(resultado)
+
+        const zap = "(Zap!)"
+        setResolucao(zap)
     }
 
     if (status === 0) {
@@ -80,7 +90,7 @@ export default function Flashcards({ item, questionario, setQuestionario, conclu
     if (status === 3) {
         return (
             <PerguntaFechada>
-                <p>{`Pergunta ${item.num}`}</p>
+                <p>{`Pergunta ${item.num} ${resolucao}`}</p>
                 <img src={setaPlay} alt="Abrir questão" onClick={() => alert("Você já respondeu essa questão")} />
             </PerguntaFechada>
         )
@@ -108,7 +118,6 @@ const PerguntaFechada = styled.div`
         font-size: 16px;
         line-height: 19px;
         color: #333333;
-        text-decoration: ${(avalia) => avalia === "" ? "line-through" : ""};   
     }
 
     img {
