@@ -4,10 +4,9 @@ import setaPlay from "../assets/img/seta_play.png"
 import setaVirar from "../assets/img/seta_virar.png"
 import deck from "./deck"
 
-export default function Flashcards({ item, questionario, setQuestionario, concluida, setConcluida }) {
+export default function Flashcards({ item, concluida, setConcluida }) {
 
     const [status, setStatus] = useState(0)
-    const [avalia, setAvalia] = useState("")
     const [resolucao, setResolucao] = useState("")
 
     function exibirPergunta(pergunta) {

@@ -20,17 +20,12 @@ export default function Container() {
             {questionario.map((item) =>
             <Flashcards key={item.num}
             item={item}
-            questionario={questionario}
-            setQuestionario={setQuestionario}
             concluida={concluida}
             setConcluida={setConcluida}
             />
             )}
             <Footer
-            questionario={questionario}
-            setQuestionario={setQuestionario}
             concluida={concluida}
-            setConcluida={setConcluida}
             />
         </ScreenContainer>
     )

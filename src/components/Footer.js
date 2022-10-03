@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export default function Footer({item, questionario, setQuestionario, concluida, setConcluida}) {
+export default function Footer({concluida}) {
 
   
 
